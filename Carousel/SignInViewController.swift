@@ -12,8 +12,7 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-   
-    @IBOutlet var createTextView: UIView!
+	@IBOutlet var createTextView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,27 +39,34 @@ class SignInViewController: UIViewController {
         navigationController!.popViewControllerAnimated(true)
     }
 
+	
 
-    
-    
-    
+// FORM VALIDATION FOR THE EMAIL AND PASSWORD -->
     @IBAction func didPressSignInButton(sender: AnyObject) {
 
         if (emailTextField.text == "scott@gmail.com" && passwordTextField.text == "password") {
-            var delayView = UIAlertView()
-            delayView.title = "Signing in..."
-            delayView.show()
+            var alertView = UIAlertView(title: "Signing in...", message: nil, delegate: nil, cancelButtonTitle: nil)
+            alertView.title = "Signing in..."
+            alertView.show()
             delay(2, { () -> () in
                     self.performSegueWithIdentifier("signedInSegue", sender: self)
-                delayView.dismissWithClickedButtonIndex(0, animated: true)
+                alertView.dismissWithClickedButtonIndex(0, animated: true)
                 })
 
         }
-        
-        else {
+		else if (emailTextField.text.isEmpty){
+            var alertView = UIAlertView(title: "Email required", message: "Hook me up with something legit!", delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+            
+        }
+		else if (passwordTextField.text.isEmpty) {
+            var alertView = UIAlertView(title: "Password required", message: "C'mon dawg.", delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+        }
+		else {
             var alertView = UIAlertView (title: "Oops", message: "Email or Password is incorrect", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
         }
-    }
+	}
 }
 

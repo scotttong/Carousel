@@ -130,6 +130,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gl0-4q-hUv"/>
                     <connections>
+                        <outlet property="createTextView" destination="edJ-Zn-eYN" id="5Bu-B2-hcY"/>
                         <outlet property="emailTextField" destination="vcV-cX-Adj" id="GOV-Ul-mBE"/>
                         <outlet property="passwordTextField" destination="3Sp-9h-0go" id="yPs-oc-Vc5"/>
                         <segue destination="0wr-P6-DRo" kind="push" identifier="signedInSegue" id="aBW-BT-IfX"/>
