@@ -16,7 +16,7 @@
 		190239D21A89F6A6007CA8FB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190239D11A89F6A6007CA8FB /* IntroViewController.swift */; };
 		190239D51A8A0335007CA8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 190239D31A8A0335007CA8FB /* Main.storyboard */; };
 		190239D71A8A0391007CA8FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190239D61A8A0391007CA8FB /* SignInViewController.swift */; };
-		190239D91A8B4305007CA8FB /* Welcome1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190239D81A8B4305007CA8FB /* Welcome1ViewController.swift */; };
+		19023A3B1A8C9A4F007CA8FB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19023A3A1A8C9A4F007CA8FB /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		190239D11A89F6A6007CA8FB /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		190239D41A8A0335007CA8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		190239D61A8A0391007CA8FB /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		190239D81A8B4305007CA8FB /* Welcome1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome1ViewController.swift; sourceTree = "<group>"; };
+		19023A3A1A8C9A4F007CA8FB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				190239CE1A89F239007CA8FB /* Common.swift */,
+				19023A3A1A8C9A4F007CA8FB /* WelcomeViewController.swift */,
 				190239D11A89F6A6007CA8FB /* IntroViewController.swift */,
 				190239D61A8A0391007CA8FB /* SignInViewController.swift */,
-				190239D81A8B4305007CA8FB /* Welcome1ViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -233,9 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				190239B11A89F1C6007CA8FB /* ViewController.swift in Sources */,
-				190239D91A8B4305007CA8FB /* Welcome1ViewController.swift in Sources */,
 				190239CF1A89F239007CA8FB /* Common.swift in Sources */,
 				190239AF1A89F1C6007CA8FB /* AppDelegate.swift in Sources */,
+				19023A3B1A8C9A4F007CA8FB /* WelcomeViewController.swift in Sources */,
 				190239D71A8A0391007CA8FB /* SignInViewController.swift in Sources */,
 				190239D21A89F6A6007CA8FB /* IntroViewController.swift in Sources */,
 			);
@@ -429,6 +429,7 @@
 				190239CA1A89F1C6007CA8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		190239CB1A89F1C6007CA8FB /* Build configuration list for PBXNativeTarget "CarouselTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +438,7 @@
 				190239CD1A89F1C6007CA8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
