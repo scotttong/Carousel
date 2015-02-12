@@ -10,6 +10,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
+	@IBOutlet weak var modalButton: UIButton!
 	@IBOutlet weak var spinButton: UIImageView!
 	@IBOutlet weak var welcomeScrollView: UIScrollView!
 	@IBOutlet weak var pageControl: UIPageControl!
@@ -24,7 +25,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 		welcomeScrollView.delegate = self
 		
 		spinButton.alpha = 0
-		
+		modalButton.hidden = true
 		
     }
 
@@ -32,7 +33,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
 	func scrollViewDidScroll(scrollView: UIScrollView!) {
 		// Get the current page based on the scroll offset
 		var page : Int = Int(round(scrollView.contentOffset.x / 320))
@@ -44,12 +45,14 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 			UIView.animateWithDuration(0.25, animations: {
 //				self.spinButton.center.y = (self.spinButton.center.y - 20);
 				self.spinButton.alpha = 1
+				self.modalButton.hidden = false
 			})
 			
 		} else {
 			UIView.animateWithDuration(0.25, animations: {
 				//				self.spinButton.center.y = (self.spinButton.center.y - 20);
 				self.spinButton.alpha = 0
+				self.modalButton.hidden = true
 			})		}
 	
 	}
