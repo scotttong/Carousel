@@ -68,5 +68,10 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
             alertView.show()
         }
 	}
+	
+	@IBAction func didPressBackButton(sender: AnyObject) {
+		navigationController!.popViewControllerAnimated(true)
+	}
+	
 }
 

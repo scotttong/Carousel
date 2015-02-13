@@ -19,7 +19,8 @@ class IntroViewController: UIViewController {
         // Do any additional setup after loading the view.
         
 //        introScrollView.contentSize = introImageView.image!.size
-        introScrollView.contentSize = introImageView.frame.size
+        introScrollView.frame.size = self.view.frame.size
+		introScrollView.contentSize = introImageView.frame.size
   
         
         
