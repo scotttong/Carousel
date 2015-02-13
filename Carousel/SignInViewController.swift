@@ -36,7 +36,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
     }
     */
     @IBAction func backButtonPressed(sender: AnyObject) {
-        navigationController!.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
 
 	

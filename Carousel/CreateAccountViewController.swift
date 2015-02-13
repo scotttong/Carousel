@@ -9,7 +9,9 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
-
+	
+	@IBOutlet weak var checkBox: UIButton!
+	@IBOutlet weak var createButtonHotspot: UIButton!
 	@IBOutlet weak var textFieldContainer: UIView!
 	@IBOutlet weak var createText: UIImageView!
 	@IBOutlet weak var createButton: UIImageView!
@@ -75,16 +77,37 @@ class CreateAccountViewController: UIViewController {
 			
 			// Set view properties in here that you want to match with the animation of the keyboard
 			// If you need it, you can use the kbSize property above to get the keyboard width and height.
-			println("hi")
+//			println("hi")
 			
 			self.textFieldContainer.center.y = self.textFieldContainer.center.y - self.createText.frame.height
 			self.createButton.center.y = self.createButton.center.y - kbSize.height
+			self.createButtonHotspot.center.y = self.createButtonHotspot.center.y - kbSize.height
 			
 			
 			}, completion: nil)
+		
 	}
 	
+	@IBAction func didPressCreateButton(sender: AnyObject) {
+//		println("create button pressed")
+	}
 	
+	@IBAction func didPressCheckBox(sender: AnyObject) {
+		println("check box pressed")
+		if let button: UIButton = sender as? UIButton {
+			if button.selected {
+				button.selected = false
+			} else {
+				button.selected = true
+			}
+		}
+	
+		
+	}
+	
+//	let image = UIImage(named: "play.png") as UIImage!
+//	let playButton  = UIButton.buttonWithType(UIButtonType.System) as UIButton
+//	playButton.setImage(image, forState: .Normal)
 
 	
 	

@@ -21,6 +21,7 @@
 		19023A411A8DC347007CA8FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19023A401A8DC347007CA8FB /* SettingsViewController.swift */; };
 		19023A431A8DC353007CA8FB /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19023A421A8DC353007CA8FB /* ConversationsViewController.swift */; };
 		197538B21A8DD026009C0B43 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197538B11A8DD026009C0B43 /* CreateAccountViewController.swift */; };
+		19EF3A411A8EA698009EECD4 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF3A401A8EA698009EECD4 /* TermsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		19023A401A8DC347007CA8FB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		19023A421A8DC353007CA8FB /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		197538B11A8DD026009C0B43 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		19EF3A401A8EA698009EECD4 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				190239CE1A89F239007CA8FB /* Common.swift */,
 				19023A3A1A8C9A4F007CA8FB /* WelcomeViewController.swift */,
 				197538B11A8DD026009C0B43 /* CreateAccountViewController.swift */,
+				19EF3A401A8EA698009EECD4 /* TermsViewController.swift */,
 				190239D11A89F6A6007CA8FB /* IntroViewController.swift */,
 				19023A3E1A8DBF74007CA8FB /* TimelineViewController.swift */,
 				190239D61A8A0391007CA8FB /* SignInViewController.swift */,
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19EF3A411A8EA698009EECD4 /* TermsViewController.swift in Sources */,
 				197538B21A8DD026009C0B43 /* CreateAccountViewController.swift in Sources */,
 				190239B11A89F1C6007CA8FB /* ViewController.swift in Sources */,
 				190239CF1A89F239007CA8FB /* Common.swift in Sources */,
