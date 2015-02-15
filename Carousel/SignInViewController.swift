@@ -10,13 +10,18 @@ import UIKit
 
 class SignInViewController: UIViewController, UIAlertViewDelegate {
 
+	@IBOutlet weak var signInTextFieldsContainer: UIView!
+	@IBOutlet weak var signInButton: UIView!
 	@IBOutlet weak var signInText: UIImageView!
-	@IBOutlet weak var signInContainerView: UIView!
-	@IBOutlet weak var loginContainerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet var createTextView: UIView!
-    
+	var keyboardIsShowing: Bool! = false
+
+	
+	var originalTextFieldsYCenter: CGFloat!
+	var originalSignInButtonYCenter: CGFloat!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +29,13 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+		
+		originalTextFieldsYCenter = signInTextFieldsContainer.center.y
+		originalSignInButtonYCenter = signInButton.center.y
+		
     }
+	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,11 +52,26 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+
+	@IBAction func textFieldEditingChanged(sender: AnyObject) {
+		var keyboardIsShowing: Bool! = true
+
+	}
+	
+	
+	@IBAction func disPressSignInButton(sender: AnyObject) {
+		self.view.endEditing(true)
+		keyboardIsShowing = false
+		println("keyboard is hidden")
+
+		
+	}
+	
+	
     @IBAction func backButtonPressed(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
 
-	
 
 // FORM VALIDATION FOR THE EMAIL AND PASSWORD -->
     @IBAction func didPressSignInButton(sender: AnyObject) {
@@ -80,6 +106,36 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 		navigationController!.popViewControllerAnimated(true)
 	}
 	
+	func keyboardWillShow(notification: NSNotification!) {
+		var userInfo = notification.userInfo!
+		
+		// Get the keyboard height and width from the notification
+		// Size varies depending on OS, language, orientation
+		var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+		var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+		var animationDuration = durationValue.doubleValue
+		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+		var animationCurve = curveValue.integerValue
+		
+		if keyboardIsShowing == false {
+			//move the login up just a little since the keyboard didn't overlap the view
+		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+			
+			
+
+			println("keyboard showing")
+			self.signInTextFieldsContainer.center.y = self.signInTextFieldsContainer.center.y - self.signInText.frame.height
+			self.signInButton.center.y = self.signInButton.center.y - kbSize.height
+			self.keyboardIsShowing = true
+			
+			}, completion: nil)
+		} else {
+			self.signInTextFieldsContainer.center.y = self.signInTextFieldsContainer.center.y
+			
+		}
+		
+	}
+	
 	func keyboardWillHide(notification: NSNotification!) {
 		var userInfo = notification.userInfo!
 		
@@ -94,36 +150,13 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 		
 		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
 			
-			// Set view properties in here that you want to match with the animation of the keyboard
-			// If you need it, you can use the kbSize property above to get the keyboard width and height.
+				self.signInTextFieldsContainer.center.y = self.originalTextFieldsYCenter
+				self.signInButton.center.y = self.originalSignInButtonYCenter
 			
 			}, completion: nil)
+		
 	}
 	
-	func keyboardWillShow(notification: NSNotification!) {
-		var userInfo = notification.userInfo!
-		
-		// Get the keyboard height and width from the notification
-		// Size varies depending on OS, language, orientation
-		var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
-		var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
-		var animationDuration = durationValue.doubleValue
-		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
-		var animationCurve = curveValue.integerValue
-		
-//		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
-//			
-//			// Set view properties in here that you want to match with the animation of the keyboard
-//			// If you need it, you can use the kbSize property above to get the keyboard width and height.
-//						println("keyboard showing")
-//			
-//			self.loginContainerView.center.y = self.loginContainerView.center.y - self.signInText.frame.height
-//			
-//			self.signInContainerView.center.y = self.signInContainerView.center.y - kbSize.height
-//			
-//			}, completion: nil)
-		
-	}
 	
 }
 

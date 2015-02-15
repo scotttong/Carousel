@@ -54,12 +54,12 @@ class CreateAccountViewController: UIViewController {
 		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
 		var animationCurve = curveValue.integerValue
 		
-		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
-			
-			// Set view properties in here that you want to match with the animation of the keyboard
-			// If you need it, you can use the kbSize property above to get the keyboard width and height.
-			
-			}, completion: nil)
+//		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+//			
+//			// Set view properties in here that you want to match with the animation of the keyboard
+//			// If you need it, you can use the kbSize property above to get the keyboard width and height.
+//			
+//			}, completion: nil)
 	}
 	
 	func keyboardWillShow(notification: NSNotification!) {

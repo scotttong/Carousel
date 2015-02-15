@@ -127,7 +127,7 @@
                                         <rect key="frame" x="20" y="209" width="284" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qau-AR-SMZ">
                                         <rect key="frame" x="20" y="255" width="20" height="22"/>
@@ -244,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="rPU-NL-lDl">
-                                <rect key="frame" x="0.0" y="214" width="320" height="144"/>
+                                <rect key="frame" x="0.0" y="424" width="320" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sign_in_buttons" id="Ckx-Aq-XN3">
@@ -259,6 +259,7 @@
                                         </state>
                                         <connections>
                                             <action selector="didPressSignInButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h4E-4i-ZfB"/>
+                                            <action selector="disPressSignInButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="udk-Jy-zag"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -280,13 +281,19 @@
                                         <rect key="frame" x="20" y="82" width="288" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="ThX-la-M2d"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="3Sp-9h-0go">
                                         <rect key="frame" x="20" y="127" width="288" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="ht4-pI-FTU"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,10 +320,10 @@
                     <connections>
                         <outlet property="createTextView" destination="edJ-Zn-eYN" id="5Bu-B2-hcY"/>
                         <outlet property="emailTextField" destination="vcV-cX-Adj" id="GOV-Ul-mBE"/>
-                        <outlet property="loginContainerView" destination="cz1-RE-IHh" id="55N-vj-EzY"/>
                         <outlet property="passwordTextField" destination="3Sp-9h-0go" id="yPs-oc-Vc5"/>
-                        <outlet property="signInContainerView" destination="rPU-NL-lDl" id="R91-l1-mOq"/>
+                        <outlet property="signInButton" destination="rPU-NL-lDl" id="Eoi-TH-JOt"/>
                         <outlet property="signInText" destination="edJ-Zn-eYN" id="YMB-rr-Z3F"/>
+                        <outlet property="signInTextFieldsContainer" destination="cz1-RE-IHh" id="Tnb-Be-nx2"/>
                         <segue destination="0wr-P6-DRo" kind="push" identifier="signedInSegue" id="aBW-BT-IfX"/>
                     </connections>
                 </viewController>
