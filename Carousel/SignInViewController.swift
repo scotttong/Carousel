@@ -131,6 +131,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 			}, completion: nil)
 		} else {
 			self.signInTextFieldsContainer.center.y = self.signInTextFieldsContainer.center.y
+			self.signInButton.center.y = self.signInButton.center.y
 			
 		}
 		
@@ -154,6 +155,8 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 				self.signInButton.center.y = self.originalSignInButtonYCenter
 			
 			}, completion: nil)
+		
+		keyboardIsShowing = false
 		
 	}
 	
