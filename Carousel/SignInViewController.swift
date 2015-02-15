@@ -10,6 +10,9 @@ import UIKit
 
 class SignInViewController: UIViewController, UIAlertViewDelegate {
 
+	@IBOutlet weak var signInText: UIImageView!
+	@IBOutlet weak var signInContainerView: UIView!
+	@IBOutlet weak var loginContainerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet var createTextView: UIView!
@@ -18,6 +21,9 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +76,53 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 	}
 	
 	@IBAction func didPressBackButton(sender: AnyObject) {
+		
 		navigationController!.popViewControllerAnimated(true)
+	}
+	
+	func keyboardWillHide(notification: NSNotification!) {
+		var userInfo = notification.userInfo!
+		
+		// Get the keyboard height and width from the notification
+		// Size varies depending on OS, language, orientation
+		var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+		var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+		var animationDuration = durationValue.doubleValue
+		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+		var animationCurve = curveValue.integerValue
+		
+		
+		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+			
+			// Set view properties in here that you want to match with the animation of the keyboard
+			// If you need it, you can use the kbSize property above to get the keyboard width and height.
+			
+			}, completion: nil)
+	}
+	
+	func keyboardWillShow(notification: NSNotification!) {
+		var userInfo = notification.userInfo!
+		
+		// Get the keyboard height and width from the notification
+		// Size varies depending on OS, language, orientation
+		var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+		var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+		var animationDuration = durationValue.doubleValue
+		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+		var animationCurve = curveValue.integerValue
+		
+//		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+//			
+//			// Set view properties in here that you want to match with the animation of the keyboard
+//			// If you need it, you can use the kbSize property above to get the keyboard width and height.
+//						println("keyboard showing")
+//			
+//			self.loginContainerView.center.y = self.loginContainerView.center.y - self.signInText.frame.height
+//			
+//			self.signInContainerView.center.y = self.signInContainerView.center.y - kbSize.height
+//			
+//			}, completion: nil)
+		
 	}
 	
 }

@@ -73,6 +73,10 @@ class CreateAccountViewController: UIViewController {
 		var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
 		var animationCurve = curveValue.integerValue
 		
+		
+		
+		if self.textFieldContainer.frame.maxY >= 64 {
+		
 		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
 			
 			// Set view properties in here that you want to match with the animation of the keyboard
@@ -85,11 +89,12 @@ class CreateAccountViewController: UIViewController {
 			
 			
 			}, completion: nil)
+		}
 		
 	}
 	
 	@IBAction func didPressCreateButton(sender: AnyObject) {
-//		println("create button pressed")
+		println("create button pressed")
 	}
 	
 	@IBAction func didPressCheckBox(sender: AnyObject) {
