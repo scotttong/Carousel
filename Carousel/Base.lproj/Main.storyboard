@@ -9,7 +9,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ahn-PI-gqU" customClass="IntroViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJQ-iO-ucW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="gMd-X1-Ggg">
@@ -71,10 +71,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="I5u-71-cSt"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <size key="freeformSize" width="320" height="1136"/>
                     <connections>
                         <outlet property="introImageView" destination="ssw-y0-efm" id="mzj-fe-YUF"/>
                         <outlet property="introScrollView" destination="gMd-X1-Ggg" id="7oz-oO-WeI"/>
+                        <outlet property="tile1ImageView" destination="MvM-G4-FJR" id="YCO-nP-R3q"/>
+                        <outlet property="tile2ImageView" destination="C2X-NC-VJF" id="GGb-Ma-Djl"/>
+                        <outlet property="tile3ImageView" destination="RI1-vu-7kx" id="WUr-gv-8ay"/>
+                        <outlet property="tile4ImageView" destination="BPo-Ae-r1L" id="bM0-Tg-G6i"/>
+                        <outlet property="tile5ImageView" destination="Iwa-xH-f6r" id="Rii-Kc-Gsh"/>
+                        <outlet property="tile6ImageView" destination="E52-XV-f6y" id="Ddx-CT-Ic1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4M-C5-Bwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +137,7 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SignInViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="rPU-NL-lDl">
@@ -458,7 +464,7 @@
             <objects>
                 <viewController id="UqM-5b-8He" customClass="CreateAccountViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oa7-pp-w4K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="uYb-5e-IkX">

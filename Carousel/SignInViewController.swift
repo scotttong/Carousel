@@ -123,7 +123,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 			
 			
 
-			println("keyboard showing")
+//			println("keyboard showing")
 			self.signInTextFieldsContainer.center.y = self.signInTextFieldsContainer.center.y - self.signInText.frame.height
 			self.signInButton.center.y = self.signInButton.center.y - kbSize.height
 			self.keyboardIsShowing = true
