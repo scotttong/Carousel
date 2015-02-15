@@ -107,6 +107,12 @@ class CreateAccountViewController: UIViewController {
 			}, completion: nil)
 		keyboardIsShowing = false
 	}
+	
+	@IBAction func didPressCheckBox(sender: AnyObject) {
+		checkBox.selected = !checkBox.selected
+		
+	}
+	
 
     /*
     // MARK: - Navigation

@@ -94,14 +94,20 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terms_nav" id="k5j-FI-cjZ">
-                                <rect key="frame" x="0.0" y="6" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <navigationBar contentMode="scaleToFill" id="bYB-gO-ePw">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Terms of Service" id="Ea5-Uv-EyW"/>
+                                </items>
+                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="33T-Ae-OFD">
-                                <rect key="frame" x="272" y="31" width="45" height="30"/>
+                                <rect key="frame" x="269" y="28" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -514,6 +520,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="check_box_selected"/>
+                                        <connections>
+                                            <action selector="didPressCheckBox:" destination="UqM-5b-8He" eventType="touchUpInside" id="BFx-VZ-oYq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u3B-8c-Pcm">
                                         <rect key="frame" x="106" y="261" width="46" height="30"/>
@@ -614,7 +623,6 @@
         <image name="settings_nav" width="320" height="64"/>
         <image name="sign_in_buttons" width="320" height="104"/>
         <image name="sign_in_nav_bar" width="320" height="66"/>
-        <image name="terms_nav" width="750" height="129"/>
         <image name="terms_text" width="320" height="33"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
