@@ -38,6 +38,6 @@ Settings
 * [x] User can dismiss the settings screen.
 * [x] User can log out
 
-![dropbox_user_stories](https://cloud.githubusercontent.com/assets/1504818/6102356/c9f57f5a-afe9-11e4-89ac-d4a319665c92.gif)
+![carousel_user_stories](https://cloud.githubusercontent.com/assets/1504818/6205199/463a145a-b51b-11e4-9844-016319e78bf5.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
