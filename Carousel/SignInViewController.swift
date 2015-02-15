@@ -54,7 +54,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
     */
 
 	@IBAction func textFieldEditingChanged(sender: AnyObject) {
-		var keyboardIsShowing: Bool! = true
+		keyboardIsShowing = true
 
 	}
 	
@@ -87,12 +87,12 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 
         }
 		else if (emailTextField.text.isEmpty){
-            var alertView = UIAlertView(title: "Email required", message: "Hook me up with something legit!", delegate: nil, cancelButtonTitle: "OK")
+            var alertView = UIAlertView(title: "Email required", message: "Please enter an email.", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
             
         }
 		else if (passwordTextField.text.isEmpty) {
-            var alertView = UIAlertView(title: "Password required", message: "C'mon dawg.", delegate: nil, cancelButtonTitle: "OK")
+            var alertView = UIAlertView(title: "Password required", message: "Please enter a password.", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
         }
 		else {
@@ -119,7 +119,7 @@ class SignInViewController: UIViewController, UIAlertViewDelegate {
 		
 		if keyboardIsShowing == false {
 			//move the login up just a little since the keyboard didn't overlap the view
-		UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+			UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
 			
 			
 

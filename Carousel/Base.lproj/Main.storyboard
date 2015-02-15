@@ -456,15 +456,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="uYb-5e-IkX">
-                                <rect key="frame" x="0.0" y="44" width="320" height="338"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="342"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_text" id="W98-bt-TVJ">
-                                        <rect key="frame" x="0.0" y="15" width="320" height="63"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_form" id="1m0-z1-Hj2">
                                         <rect key="frame" x="0.0" y="71" width="320" height="192"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_text" id="W98-bt-TVJ">
+                                        <rect key="frame" x="0.0" y="15" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="Ibs-hQ-F3m">
@@ -473,7 +473,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <connections>
-                                            <action selector="textEditingChanged:" destination="UqM-5b-8He" eventType="editingChanged" id="Tap-yJ-RjL"/>
+                                            <action selector="textEditingChanged:" destination="UqM-5b-8He" eventType="editingDidEnd" id="QHr-HI-jbK"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" id="hgH-k4-lVt">
@@ -515,11 +515,21 @@
                                         </state>
                                         <state key="selected" image="check_box_selected"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u3B-8c-Pcm">
+                                        <rect key="frame" x="106" y="261" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="nif-Ka-Tnu" kind="modal" id="J8i-k1-nyk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_nav" id="txu-Ov-b9q">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="-6" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CZo-P0-PAz">

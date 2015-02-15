@@ -42,7 +42,8 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	@IBAction func textEditingChanged(sender: AnyObject) {
-		keyboardIsShowing = true
+		println("editing changed")
+		keyboardIsShowing = false
 	}
     
 	@IBAction func backButton(sender: AnyObject) {
@@ -50,7 +51,7 @@ class CreateAccountViewController: UIViewController {
 	}
 	
 	@IBAction func didPressCreateButton(sender: AnyObject) {
-		println("create button pressed")
+		println("create button pressed, keyboard hiding")
 		self.view.endEditing(true)
 		keyboardIsShowing = false
 	}
@@ -73,14 +74,16 @@ class CreateAccountViewController: UIViewController {
 				
 				
 				println("keyboard showing")
-				self.textFieldContainer.center.y = self.textFieldContainer.center.y - self.createText.frame.height
-				self.createButton.center.y = self.createButton.center.y - kbSize.height
+				self.textFieldContainer.center.y = self.originalTextFieldCenterY - self.createText.frame.height
+				self.createButton.center.y = self.originalButtonCenterY - kbSize.height
 				self.keyboardIsShowing = true
+				
 				}, completion: nil)
 			
 		} else {
 			self.textFieldContainer.center.y = self.originalTextFieldCenterY
 			self.createButton.center.y = self.originalButtonCenterY
+
 		}
 		
 	}
@@ -102,6 +105,7 @@ class CreateAccountViewController: UIViewController {
 			self.createButton.center.y = self.originalButtonCenterY
 			
 			}, completion: nil)
+		keyboardIsShowing = false
 	}
 
     /*
