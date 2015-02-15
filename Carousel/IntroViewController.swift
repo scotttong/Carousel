@@ -38,6 +38,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
 		
 		//tile 1 initial position
 		tile1ImageView.transform = CGAffineTransformMakeTranslation(CGFloat(-30), CGFloat(-285))
+		tile1ImageView.transform = CGAffineTransformScale(tile1ImageView.transform, CGFloat(1), CGFloat(1))
 		tile1ImageView.transform = CGAffineTransformRotate(tile1ImageView.transform, CGFloat(Double(-10) * M_PI / 180))
 		
 		//tile 2 initial position
